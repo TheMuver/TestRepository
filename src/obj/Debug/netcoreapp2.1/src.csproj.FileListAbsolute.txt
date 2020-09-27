@@ -1,0 +1,11 @@
+C:\repos\TestRepository\src\bin\Debug\netcoreapp2.1\src.deps.json
+C:\repos\TestRepository\src\bin\Debug\netcoreapp2.1\src.runtimeconfig.json
+C:\repos\TestRepository\src\bin\Debug\netcoreapp2.1\src.runtimeconfig.dev.json
+C:\repos\TestRepository\src\bin\Debug\netcoreapp2.1\src.dll
+C:\repos\TestRepository\src\bin\Debug\netcoreapp2.1\src.pdb
+C:\repos\TestRepository\src\obj\Debug\netcoreapp2.1\src.csprojAssemblyReference.cache
+C:\repos\TestRepository\src\obj\Debug\netcoreapp2.1\src.csproj.CoreCompileInputs.cache
+C:\repos\TestRepository\src\obj\Debug\netcoreapp2.1\src.AssemblyInfoInputs.cache
+C:\repos\TestRepository\src\obj\Debug\netcoreapp2.1\src.AssemblyInfo.cs
+C:\repos\TestRepository\src\obj\Debug\netcoreapp2.1\src.dll
+C:\repos\TestRepository\src\obj\Debug\netcoreapp2.1\src.pdb

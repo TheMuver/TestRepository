@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MathCalculatorProg
+namespace MathCalculatorTests
 {
     public class MathCalculator
     {

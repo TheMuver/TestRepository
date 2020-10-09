@@ -10,5 +10,20 @@ namespace MathCalculatorTests
         {
 
         }
+
+        [Fact]
+        public void WhenSumFiveAndThreeThenGotEight()
+        {
+                // Arrage
+                const int Five = 5;
+                const int Three = 3;
+                MathCalculator calculator = new MathCalculator();
+
+                // Act
+                var result = calculator.Sum(Five, Three);
+
+                // Assert
+                Assert.Equal(8, result);
+        }
     }
 }

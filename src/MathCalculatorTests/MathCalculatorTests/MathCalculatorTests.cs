@@ -23,9 +23,7 @@ namespace MathCalculatorTests
         public void WhenSubFiveAndThreeGotTwo()
         {
             MathCalculator calculator = new MathCalculator();
-            
             var result = calculator.Sub(Five, Three);
-            
             Assert.Equal(2, result);
         }
 

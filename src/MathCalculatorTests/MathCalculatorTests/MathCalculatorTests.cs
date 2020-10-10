@@ -42,13 +42,5 @@ namespace MathCalculatorTests
             var result = calculator.Sum(Three, -Three);
             Assert.Equal(0, result);
         }
-
-        [Fact]
-        public void WhenSubThreeAndNullGotException()
-        {
-            MathCalculator calculator = new MathCalculator();
-            var result = calculator.Sub(Three, 0);
-            Assert.Equal(Three, result);        
-        }
     }
 }

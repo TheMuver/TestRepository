@@ -56,5 +56,29 @@ namespace MathCalculatorTests
             var result = calculator.Sub( "ww112", Five.ToString());
             Assert.Equal(0, result);
         }
+
+                [Fact]
+        public void WhenMultStringFiveAndThreeGot15()
+        {
+            MathCalculator calculator = new MathCalculator();
+            var result = calculator.Mult(Five.ToString(), Three.ToString());
+            Assert.Equal(15, result);
+        }
+
+        [Fact]
+        public void WhenMultStringBeliberdaAndFiveGotNull()
+        {
+            MathCalculator calculator = new MathCalculator();
+            var result = calculator.Mult(Five.ToString(), "ww112");
+            Assert.Equal(0, result);
+        }
+
+        [Fact]
+        public void WhenMultStringFiveAndBeliberdaGotNull()
+        {
+            MathCalculator calculator = new MathCalculator();
+            var result = calculator.Mult( "ww112", Five.ToString());
+            Assert.Equal(0, result);
+        }
     }
 }

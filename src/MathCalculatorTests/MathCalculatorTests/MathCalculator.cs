@@ -27,5 +27,20 @@ namespace MathCalculatorTests
         {
             return a-b;
         }
+
+        public int Sub(string a, string b)
+        {
+            int num_1;
+            int num_2;
+
+            if (int.TryParse(a, out num_1) && int.TryParse(b, out num_2))
+            {
+                return Convert.ToInt32(a) - Convert.ToInt32(b);
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

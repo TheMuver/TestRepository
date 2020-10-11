@@ -7,39 +7,21 @@ namespace MathCalculatorTests
     {
         private const int Five = 5;
         private const int Three = 3;
+        private const int Eight = 8;
 
         [Fact]
-        public void WhenSumFiveAndThreeThenGotEight()
-        {
-                // Arrage
-                MathCalculator calculator = new MathCalculator();
-                // Act
-                var result = calculator.Sum(Five, Three);
-                // Assert
-                Assert.Equal(8, result);
-        }
-        
-        [Fact]
-        public void WhenSubFiveAndThreeGotTwo()
+        public void WhenSumStringFiveAndThreeGotEight()
         {
             MathCalculator calculator = new MathCalculator();
-            var result = calculator.Sub(Five, Three);
-            Assert.Equal(2, result);
+            var result = calculator.Sum(Five.ToString(), Three.ToString());
+            Assert.Equal(Eight, result);
         }
 
         [Fact]
-        public void WhenSubFiveAndNegativeFiveGotNegativeOne()
+        public void WhenSumStringFiveAndBeliberdaGotNull()
         {
             MathCalculator calculator = new MathCalculator();
-            var result = calculator.Sub(Five, -Five);
-            Assert.Equal(10, result);
-        }
-
-        [Fact]
-        public void WhenSumThreeAndNegativeThreeGotNull()
-        {
-            MathCalculator calculator = new MathCalculator();
-            var result = calculator.Sum(Three, -Three);
+            var result = calculator.Sum(Five.ToString(), "wwww");
             Assert.Equal(0, result);
         }
     }

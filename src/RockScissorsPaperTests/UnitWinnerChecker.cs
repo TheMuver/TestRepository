@@ -9,32 +9,35 @@ namespace RockScissorsPaperTests
     public class UnitWinnerChecker
     {
         [Fact]
-        public void WhenRockandPaperWinnerPaper()
+        public void WhenRockandPaperGotPaper()
         {
             WinnerChecker winnerChecker = new WinnerChecker();
             var result = winnerChecker.Play(rsp.Rock, rsp.Paper);
-            Assert.Equal(1, result);
+            Assert.Equal(2, result);
         }
-
-        public void WnenInsertInteger()
+        
+        [Fact]
+        public void WnenInsertIntegerGotErr()
         {
             WinnerChecker winnerChecker = new WinnerChecker();
             var result = winnerChecker.Play((rsp)5, (rsp)9);
-            Assert.Edual(-1, result);
-        }
-
-        public void WhenScissorsandScissorsDraw()
-        {
-            WinnerChecker winnerChecker = new WinnerChecker();
-            var result = winnerChecker.Play(rsp.Scissors, rsp.Scissors);
             Assert.Equal(-1, result);
         }
 
-        public void WhenPaperandRockWinnerPaper()
+        [Fact]
+        public void WhenScissorsandScissorsGotDraw()
+        {
+            WinnerChecker winnerChecker = new WinnerChecker();
+            var result = winnerChecker.Play(rsp.Scissors, rsp.Scissors);
+            Assert.Equal(0, result);
+        }
+
+        [Fact]
+        public void WhenPaperandRockGotPaper()
         {
             WinnerChecker winnerChecker = new WinnerChecker();
             var result = winnerChecker.Play(rsp.Paper, rsp.Rock);
-            Assert.Equal(0, result);
+            Assert.Equal(1, result);
         }
     }
 }

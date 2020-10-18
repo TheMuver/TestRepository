@@ -2,7 +2,7 @@
 
 namespace RockScissorsPaperLib
 {
-    public class Class1
+    public class WinnerChecker
     {
     }
 }

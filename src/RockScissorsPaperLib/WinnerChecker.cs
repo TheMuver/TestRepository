@@ -2,9 +2,13 @@
 
 namespace RockScissorsPaperLib
 {
-    public enum Rsp { Rock, Scissors, Paper }
+    public enum rsp { Rock, Scissors, Paper }
 
     public class WinnerChecker
     {
+        public rsp CheckWinner(rsp first, rsp second)
+        {
+                
+        }
     }
 }

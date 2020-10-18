@@ -8,7 +8,6 @@ namespace RockScissorsPaperTests
 {
     public class UnitWinnerChecker
     {
-
         //Rock
         [Fact]
         public void WhenRockandPaperGotPaper()

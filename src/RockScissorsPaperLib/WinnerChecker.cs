@@ -3,7 +3,7 @@ using System;
 
 namespace RockScissorsPaperLib
 {
-    public enum rsp { Rock, Scissors, Paper }
+    public enum rsp { Rock, Scissors, Paper, Lizard, Spoke }
 
     public class WinnerChecker
     {

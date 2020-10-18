@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Security.Cryptography;
+using System;
 
 namespace RockScissorsPaperLib
 {
@@ -8,7 +9,37 @@ namespace RockScissorsPaperLib
     {
         public int CheckWinner(rsp first, rsp second)
         {
-            
+            switch (first)
+            {
+                case rsp.Paper:
+                    if (second == rsp.Paper)
+                        return -1;
+                    else if (second == rsp.Rock)
+                        return 0;
+                    else if (second == rsp.Scissors)
+                        return 1;
+                    break;
+                case rsp.Rock:
+                    if (second == rsp.Paper)
+                        return 1;
+                    else if (second == rsp.Rock)
+                        return -1;
+                    else if (second == rsp.Scissors)
+                        return 0;
+                    break;
+                case rsp.Scissors:
+                    if (second == rsp.Paper)
+                        return 0;
+                    else if (second == rsp.Rock)
+                        return 1;
+                    else if (second == rsp.Scissors)
+                        return -1;
+                    break;
+                default:
+                    return -1;
+                    break;
+            }
+            return -1;
         }
     }
 }

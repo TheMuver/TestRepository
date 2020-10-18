@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RockScissorsPapaerLib
+namespace RockScissorsPaperLib
 {
     public class Class1
     {

@@ -7,7 +7,7 @@ namespace RockScissorsPaperLib
 
     public class WinnerChecker
     {
-        public int CheckWinner(rsp first, rsp second)
+        public int Play(rsp first, rsp second)
         {
             switch (first)
             {

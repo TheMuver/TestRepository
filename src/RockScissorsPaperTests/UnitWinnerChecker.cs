@@ -93,5 +93,13 @@ namespace RockScissorsPaperTests
             var result = winnerChecker.Play((rsp)5, (rsp)9);
             Assert.Equal(-1, result);
         }
+
+        [Fact]
+        public void WhenLizardandRockGotPaper()
+        {
+            AdditionalWinnerChecker winnerChecker = new AdditionalWinnerChecker();
+            var result = winnerChecker.Play(rsp.Lizard, rsp.Rock);
+            Assert.Equal(2, result);
+        }
     }
 }

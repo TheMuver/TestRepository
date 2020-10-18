@@ -16,12 +16,16 @@ namespace RockScissorsPaperLib
         }
         public int Play(rsp first, rsp second)
         {
-            if (first == second && (int)first <= 5 && (int)second <= 5)
-                return 0;
-            else if(d[first].Contains<rsp>(second))
-                return 1;
-            else
-                return 2;
+            if((int)first <= 5 && (int)second <= 5)
+            {
+                if (first == second )
+                    return 0;
+                else if(d[first].Contains<rsp>(second))
+                    return 1;
+                else
+                    return 2;
+            }
+
 
             return -1;
         }

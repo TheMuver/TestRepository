@@ -36,7 +36,7 @@ namespace RockScissorsPaperTests
         }
 
         [Fact]  
-        public void WhenRockandScissorsGotPaper()
+        public void WhenRockandScissorsGotRock()
         {
             WinnerChecker winnerChecker = new WinnerChecker();
             var result = winnerChecker.Play(rsp.Rock, rsp.Scissors);
@@ -120,7 +120,7 @@ namespace RockScissorsPaperTests
         }
 
         [Fact]
-        public void WhenPaperandScissorsGotPaper()
+        public void WhenPaperandScissorsGotScissors()
         {
             WinnerChecker winnerChecker = new WinnerChecker();
             var result = winnerChecker.Play(rsp.Paper, rsp.Scissors);
@@ -196,7 +196,7 @@ namespace RockScissorsPaperTests
         }
 
         [Fact]
-        public void WhenSpokeandPaperGotLizard()
+        public void WhenSpokeandPaperGotPaper()
         {
             AdditionalWinnerChecker winnerChecker = new AdditionalWinnerChecker();
             var result = winnerChecker.Play(rsp.Spoke, rsp.Paper);
@@ -204,7 +204,7 @@ namespace RockScissorsPaperTests
         }
 
         [Fact]
-        public void WhenSpokeandScissorsGotScissors()
+        public void WhenSpokeandScissorsGotSpoke()
         {
             AdditionalWinnerChecker winnerChecker = new AdditionalWinnerChecker();
             var result = winnerChecker.Play(rsp.Spoke, rsp.Scissors);
@@ -220,7 +220,7 @@ namespace RockScissorsPaperTests
         }
 
         [Fact]
-        public void WhenSpokeandLizardGotDraw()
+        public void WhenSpokeandLizardGotLizard()
         {
             AdditionalWinnerChecker winnerChecker = new AdditionalWinnerChecker();
             var result = winnerChecker.Play(rsp.Spoke, rsp.Lizard);

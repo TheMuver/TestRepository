@@ -57,8 +57,9 @@ namespace Client
         public static void RequestProccesing(string data)
         {
             stream = client.GetStream();   
+            string[] text = data.Split(':');
 
-            switch(data)
+            switch(text[0])
             {
                 case "name?":
                     Console.WriteLine("Какое вы хотите себе имя?");
@@ -73,9 +74,20 @@ namespace Client
                 case "waiting":
                     Console.WriteLine("Ожидание новых игроков...");
                     break;
+                case "player":
+                    Console.WriteLine($"Подключился новый игрок под именем {text[1]}");
+                    break;
                 case "choised":
-                     Console.WriteLine("Подключился новый игрок под именем Вася");
-                     break;
+                    Console.WriteLine($"{text[1]} сделал выбор");
+                    break;
+                case "winner":
+                    Console.WriteLine($"{text[1]} выиграл, у него была бумага {text[2]}");
+                    break;
+                case "continue?":
+                    Console.WriteLine("Хотите продолжить?(yes/no)");
+                    string answer = Console.ReadLine();
+                    Console.WriteLine($"continue{answer}");
+                    break;
             }
         }
     }

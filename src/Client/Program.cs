@@ -19,7 +19,9 @@ namespace Client
                 Int32 port = 13000;
                 IPAddress addr = IPAddress.Parse("26.129.184.182");
                 client = new TcpClient();
-                client.Connect(addr.ToString(), port);               
+                client.Connect(addr, port);     
+
+                HandleConnection();          
             }
             catch(SocketException e)
             {
@@ -35,9 +37,8 @@ namespace Client
             stream.Write(msg, 0, msg.Length);
         }
 
-        public static void HandleConnection(object c)
+        public static void HandleConnection()
         {
-            var client = c as TcpClient;
             Byte[] bytes = new Byte[256];
             string data = null;
             stream = client.GetStream();
@@ -55,7 +56,7 @@ namespace Client
 
         public static void RequestProccesing(string data)
         {
-            stream = client.GetStream();            
+            stream = client.GetStream();   
 
             switch(data)
             {
@@ -64,6 +65,17 @@ namespace Client
                     string name = Console.ReadLine();
                     SendMessage($"name:{name}");
                     break;
+                case "choice?":
+                    Console.WriteLine("Какой ваш выбор? Варианты выбора предмета: paper, lizard, rock, scissors, spoke");
+                    string choice = Console.ReadLine();
+                    SendMessage($"choice:{choice}");
+                    break;
+                case "waiting":
+                    Console.WriteLine("Ожидание новых игроков...");
+                    break;
+                case "choised":
+                     Console.WriteLine("Подключился новый игрок под именем Вася");
+                     break;
             }
         }
     }

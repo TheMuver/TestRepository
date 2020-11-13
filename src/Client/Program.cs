@@ -57,15 +57,14 @@ namespace Client
 
         public static void RequestProccesing(string data)
         {
-            stream = client.GetStream();
-
-            string name = Console.ReadLine();
+            stream = client.GetStream();            
 
             switch(data)
             {
                 case "name?":
                     Console.WriteLine("Какое вы хотите себе имя?");
-                    
+                    string name = Console.ReadLine();
+                    SendMessage($"name:{name}");
                     break;
             }
         }

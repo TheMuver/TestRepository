@@ -18,14 +18,11 @@ namespace Client
                 Int32 port = 13000;
                 IPAddress addr = IPAddress.Parse("");
                 TcpClient client = new TcpClient();
-                client.Connect(addr.ToString(), port);
-                
-
-                
+                client.Connect(addr.ToString(), port);               
             }
             catch(SocketException e)
             {
-                
+                Console.WriteLine("SocketException: {0}", e);
             }
 
 
@@ -44,18 +41,34 @@ namespace Client
             var client = c as TcpClient;
             Byte[] bytes = new Byte[256];
             string data = null;
-            NetworkStream stream = client.GetStream();
+            stream = client.GetStream();
+            
+            SendMessage(client, data);
+
+            client.Close();
+        }
+
+        public static void RequestProccesing(TcpClient client)
+        {
+            Byte[] bytes = new Byte[256];
+            string data = null;
+            stream = client.GetStream();
+
             int i;
 
             while((i = stream.Read(bytes, 0, bytes.Length)) != 0)
             {
-                data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
-                Console.WriteLine(data);
-
-                SendMessage(client, data);
+                data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);          
             }
 
-            client.Close();
+            string name;
+
+            switch(data)
+            {
+                case "name?":
+                    Console.ReadLine(name);
+                    break;
+            }
         }
     }
 }

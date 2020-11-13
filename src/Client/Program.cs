@@ -30,7 +30,7 @@ namespace Client
         }
 
 
-        public static void SendMessage(TcpClient client, string data)
+        public static void SendMessage(string data)
         {
             byte[] msg = System.Text.Encoding.ASCII.GetBytes(data);
             stream = client.GetStream();
@@ -47,26 +47,25 @@ namespace Client
 
             while((i = stream.Read(bytes, 0, bytes.Length)) != 0)
             {
-                data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);          
+                data = System.Text.Encoding.ASCII.GetString(bytes, 0, i); 
+
+                RequestProccesing(data);         
             }
-            RequestProccesing(data);
-            
-            SendMessage(client, data);
 
             client.Close();
         }
 
         public static void RequestProccesing(string data)
         {
-            Byte[] bytes = new Byte[256];
             stream = client.GetStream();
 
-            string name;
+            string name = Console.ReadLine();
 
             switch(data)
             {
                 case "name?":
-                    Console.ReadLine(name);
+                    Console.WriteLine("Какое вы хотите себе имя?");
+                    
                     break;
             }
         }

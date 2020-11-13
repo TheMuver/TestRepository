@@ -10,6 +10,7 @@ namespace Client
     class Program
     {
         static NetworkStream stream;
+        static TcpClient client;
 
         static void Main(string[] args)
         {
@@ -17,7 +18,7 @@ namespace Client
             {
                 Int32 port = 13000;
                 IPAddress addr = IPAddress.Parse("");
-                TcpClient client = new TcpClient();
+                client = new TcpClient();
                 client.Connect(addr.ToString(), port);               
             }
             catch(SocketException e)
@@ -42,24 +43,23 @@ namespace Client
             Byte[] bytes = new Byte[256];
             string data = null;
             stream = client.GetStream();
-            
-            SendMessage(client, data);
-
-            client.Close();
-        }
-
-        public static void RequestProccesing(TcpClient client)
-        {
-            Byte[] bytes = new Byte[256];
-            string data = null;
-            stream = client.GetStream();
-
             int i;
 
             while((i = stream.Read(bytes, 0, bytes.Length)) != 0)
             {
                 data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);          
             }
+            RequestProccesing(data);
+            
+            SendMessage(client, data);
+
+            client.Close();
+        }
+
+        public static void RequestProccesing(string data)
+        {
+            Byte[] bytes = new Byte[256];
+            stream = client.GetStream();
 
             string name;
 

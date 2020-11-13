@@ -17,7 +17,7 @@ namespace Client
             try
             {
                 Int32 port = 13000;
-                IPAddress addr = IPAddress.Parse("");
+                IPAddress addr = IPAddress.Parse("26.129.184.182");
                 client = new TcpClient();
                 client.Connect(addr.ToString(), port);               
             }
@@ -25,8 +25,6 @@ namespace Client
             {
                 Console.WriteLine("SocketException: {0}", e);
             }
-
-
         }
 
 

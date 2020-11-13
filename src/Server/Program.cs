@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Runtime.InteropServices;
+using System.Linq;
 using System.Net.WebSockets;
 using System.Security.Cryptography;
 using System.Runtime.CompilerServices;
@@ -96,7 +97,7 @@ namespace Server
                 {
                     foreach (var x in clients.Keys)
                         if (!players.ContainsKey(x))
-                            SendMessage(x, "choise?");
+                            SendMessage(x, "choice?");
                 }
                 else
                 {
@@ -106,11 +107,11 @@ namespace Server
                     int winner = w.Play(answers[0], answers[1])-1;
                     foreach (var x in clients.Keys)
                     {
-                        SendMessage(x, $"winner:{clients.Values.ToArray()[winner]}:{answers[winner]}");
+                        SendMessage(x, $"winner:{clients[playerses[winner]]}:{answers[winner]}");
                     }
                     break;
                 }
-                
+
                 Thread.Sleep(1000); // обработчик засыпает на секунду
             }
         }
@@ -127,7 +128,7 @@ namespace Server
                             SendMessage(x, $"player:{req[1]}");
                         Console.WriteLine($"New player is {req[1]}");
                     break;
-                case "choise":
+                case "choice":
                     rsp choice = rsp.Lizard;
                     switch(req[1])
                     {
@@ -152,7 +153,7 @@ namespace Server
                         if (true/*x != client*/)
                             SendMessage(x, $"choised:{clients[client]}");
                     break;
-                case "":
+                case "continue":
                     break;
                 default:
                     Console.WriteLine($"Unknow request: {mess}");
